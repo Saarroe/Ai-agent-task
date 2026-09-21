@@ -10,4 +10,18 @@ wheels/
 .venv/
 
 # Environment variables / secrets
-.env
+env.json
+
+# Local database
+tasks.db
+*.db
+
+# Test / tooling cache
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# IDE / OS
+.vscode/
+.DS_Store
+Thumbs.db
