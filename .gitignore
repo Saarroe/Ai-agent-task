@@ -25,3 +25,8 @@ tasks.db
 .vscode/
 .DS_Store
 Thumbs.db
+
+# React / Vite
+frontend/node_modules/
+frontend/dist/
+
