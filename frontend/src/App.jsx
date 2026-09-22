@@ -94,7 +94,9 @@ function App() {
       <TaskForm createTask={createTask} />
       
       <AiTaskForm createTask={createTask} />
-
+      
+      <h2 className="tasks-heading">Tasks</h2>
+      
       {error && <p>{error}</p>}
       
       {tasks.map((task) => (

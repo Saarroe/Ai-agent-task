@@ -17,6 +17,7 @@ function TaskForm({ createTask }) {
 
   return (
     <form onSubmit={handleSubmit}>
+      <h2>Add task</h2>
       <input
         type="text"
         value={title}
