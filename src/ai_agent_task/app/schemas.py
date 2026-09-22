@@ -10,5 +10,5 @@ class TaskUpdate(BaseModel):
 
 class TaskCreate(BaseModel):
     title: str
-    date: datetime
+    date: datetime | None = None
     completed: bool = False
