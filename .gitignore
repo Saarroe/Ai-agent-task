@@ -11,6 +11,7 @@ wheels/
 
 # Environment variables / secrets
 env.json
+.env
 
 # Local database
 tasks.db
