@@ -34,8 +34,8 @@ function App() {
       await createTaskApi(title, date)
       await fetchTasks()
       return true
-    } catch {
-      setError('Failed to create task')
+    } catch (error) {
+      setError(error.message)
       return false
     }
   }
@@ -95,9 +95,9 @@ function App() {
       
       <AiTaskForm createTask={createTask} />
       
-      <h2 className="tasks-heading">Tasks</h2>
-      
       {error && <p>{error}</p>}
+      
+      <h2 className="tasks-heading">Tasks</h2>
       
       {tasks.map((task) => (
         <TaskItem

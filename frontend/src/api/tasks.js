@@ -18,10 +18,14 @@ export async function createTask(title, date) {
     },
     body: JSON.stringify({
       title: title,
-      date: date,
+      date: date || null,
       completed: false,
     }),
   })
+  
+  if (response.status === 422) {
+    throw new Error('Too large input')
+  }
 
   if (!response.ok) {
     throw new Error('Failed to create task')

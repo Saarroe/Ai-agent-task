@@ -10,7 +10,11 @@ export async function parseTask(text) {
       text: text,
     }),
   })
-
+  
+  if (response.status === 422) {
+    throw new Error('Too large input')
+  }
+  
   if (!response.ok) {
     throw new Error('Failed to parse task')
   }

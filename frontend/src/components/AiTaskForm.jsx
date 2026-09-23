@@ -3,10 +3,13 @@ import { parseTask } from '../api/ai'
 
 function AiTaskForm({ createTask }) {
   const [text, setText] = useState('')
+  const [error, setError] = useState('')
 
   async function handleSubmit(event) {
     event.preventDefault()
-
+    setError('')
+    
+    try {
     const parsedTask = await parseTask(text)
 
     const success = await createTask(
@@ -17,7 +20,10 @@ function AiTaskForm({ createTask }) {
     if (success) {
       setText('')
     }
-  }
+    } catch (error) {
+      setError(error.message)
+    }
+}
 
   return (
     <form onSubmit={handleSubmit}>
@@ -34,7 +40,9 @@ function AiTaskForm({ createTask }) {
       <button type="submit">
         Create with AI
       </button>
+      {error && <p>{error}</p>}
     </form>
+    
   )
 }
 

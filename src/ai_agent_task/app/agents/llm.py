@@ -105,6 +105,7 @@ User message:
 
 Rules:
 - Create a concise task title with a maximum of 200 characters.
+- If the input does not contain a meaningful todo task, use the original input as the title with max 200 characters.
 - Convert relative dates such as "tomorrow" or "next Monday"
   into an ISO 8601 datetime.
 - If no date or time is mentioned, return null for date.
