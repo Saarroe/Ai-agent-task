@@ -26,6 +26,7 @@ function AiTaskForm({ createTask }) {
       <input
         type="text"
         value={text}
+        maxLength={500}
         onChange={(event) => setText(event.target.value)}
         placeholder="e.g. Gym tomorrow at 6pm"
       />

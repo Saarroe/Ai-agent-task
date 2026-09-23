@@ -104,8 +104,13 @@ User message:
 {text}
 
 Rules:
-- Create a concise task title.
+- Create a concise task title with a maximum of 200 characters.
 - Convert relative dates such as "tomorrow" or "next Monday"
   into an ISO 8601 datetime.
 - If no date or time is mentioned, return null for date.
+- If the user gives an approximate time of day, use these defaults:
+  - morning = 08:00
+  - afternoon = 14:00
+  - evening = 18:00
+- Apply these defaults also to equivalent expressions in other languages.
 """.strip()

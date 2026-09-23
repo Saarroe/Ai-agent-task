@@ -7,7 +7,10 @@ function TaskForm({ createTask }) {
   async function handleSubmit(event) {
     event.preventDefault()
 
-    const success = await createTask(title, date)
+    const success = await createTask(
+    title,
+    date || null,
+    )
 
     if (success) {
       setTitle('')
@@ -28,6 +31,7 @@ function TaskForm({ createTask }) {
       <input
         type="datetime-local"
         value={date}
+        maxLength={200}
         onChange={(event) => setDate(event.target.value)}
       />
 
