@@ -23,7 +23,7 @@ into a structured task with a title and due date.
 * Create tasks using natural language with an LLM
 * Graceful fallback when the OpenAI API is unavailable or not configured
 
-## Running locally
+## Running Locally
 
 ### Backend
 
@@ -58,3 +58,17 @@ The frontend runs at `http://localhost:5173`.
 The LLM extracts a concise task title and optional due date from natural-language input using structured JSON output.
 
 If the OpenAI API is unavailable or not configured, the original input is used as the task title and the due date is left empty.
+
+## Design Decisions
+
+The application is intentionally kept small and simple. FastAPI and SQLModel provide a typed backend, while SQLite provides lightweight local persistence without additional infrastructure.
+
+Task routes and AI logic are separated to keep responsibilities clear. The LLM is only responsible for converting natural-language input into structured task data.
+
+## Tests
+
+Run the tests with:
+
+```bash
+uv run pytest
+```
